@@ -22,6 +22,5 @@ exports.verifyUserRole = (...roles) => (req, res, next) => {
     if (!roles.includes(req.user.role)) {
         return next(new CustomError('Access Denied', 403))
     }
-
     next();
 }
